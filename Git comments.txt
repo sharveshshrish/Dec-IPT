@@ -34,3 +34,37 @@
    git pull
    
    git stash
+   
+   
+   
+   //sub branch to main branch
+   
+   
+   status - git branch -a
+   
+   create a sub branch - git branch secondbranch 
+   
+   checkout - git checkout secondbranch  
+   
+   push: git push -u origin secondbranch
+   
+   // merge to second branch to main branch
+   
+   come to main branch - git checkout main
+   
+   merge to main branch =  git merge secondbranch
+   
+   
+   directly entire third branch: git checkout -b thirdbranch
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
