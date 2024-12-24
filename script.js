@@ -1145,3 +1145,263 @@ for(var x of str) {
 
     var filter = num.filter((val,idx,accarr) => val%2==0)
     console.log(filter);
+
+
+
+    // this key word (global)
+
+
+    var obje = {
+
+        name:"sharvesh",
+        age:"25",
+        details:function() { // local scope
+
+            console.log(this.age);
+            
+        }
+    }
+    obje.details()
+
+    // //template literals or string literals '${}
+
+    // var a = "hello"
+    // var b = "how are you"
+    // console.log(${} ${} how are you);
+
+
+    //settimeout
+
+
+    // 1sec = 1000ms taken
+
+    setTimeout(()=> {
+
+     console.log("bomb blastt");
+        
+    },3000)
+
+
+
+    //constructor
+
+
+    function Bike (name,model,year) {
+
+        this.Bikename = name
+        this.Bikemodel = model
+        this.Bikeyear = year
+
+    }
+    //object
+    const deatils = new Bike("ysmshs","rx", 1999)
+    console.log(deatils);
+
+    //class
+
+class Student{
+    constructor(name, age, dep) {
+        this.name = name;
+        this.age = age;
+        this.dep = dep;
+    }
+
+    details() {
+        console.log(`The name is ${this.name}, the age is ${this.age}, and the department is ${this.dep}`);
+    }
+}
+
+const stdDetails = new Student("Hari", 20, "BCA");
+console.log(stdDetails);
+stdDetails.details();
+
+
+
+class Office {
+
+    constructor (name,age,dep) {
+
+
+        this.name = name;
+        this.age = age;
+        this.dep = dep;
+    }
+
+    details() {
+
+        console.log(`The name is ${this.name}, the age is ${this.age}, and the department is ${this.dep}`);
+   
+    
+    }
+
+}
+
+const officeDetails = new Office("Hari", 20, "BCA");
+console.log(officeDetails);
+officeDetails.details();
+
+
+
+class Office {
+    constructor(name, id, des, salary) {
+        this.name = name;
+        this.id = id;
+        this.des = des;
+        this.salary = salary;
+    }
+
+    detail() {
+        if (this.salary <= 40000 && this.salary >= 30000) {
+            console.log(`${this.des} position ${this.name} is level 1 category`);
+        } else if (this.salary < 30000 && this.salary >= 20000) {
+            console.log(`${this.des} position ${this.name} is level 2 category`);
+        } else if (this.salary < 20000) {
+            console.log(`${this.des} position ${this.name} is level 3 category`);
+        }
+    }
+}
+
+
+var details1 = new Office("Ravi", "101", "Team Lead", 38000);
+var details2 = new Office("Priya", "102", "Developer", 29000);
+var details3 = new Office("Arun", "103", "Tester", 31000);
+var details4 = new Office("Sneha", "104", "Intern", 18000);
+
+
+console.log(details4);
+details4.detail();
+
+
+
+class Office {
+    constructor(name, id, des, salary) {
+        this.name = name;
+        this.id = id;
+        this.des = des;
+        this.salary = salary;
+    }
+
+    detail() {
+        if (this.salary > 50000) {
+            console.log(`${this.des} position ${this.name} is in Rating 1 category`);
+        } else if (this.salary > 40000 && this.salary <= 50000) {
+            console.log(`${this.des} position ${this.name} is in Rating 2 category`);
+        } else if (this.salary > 30000 && this.salary <= 40000) {
+            console.log(`${this.des} position ${this.name} is in Rating 3 category`);
+        } else {
+            console.log(`${this.des} position ${this.name} is in Rating 4 category`);
+        }
+    }
+}
+
+var details1 = new Office("Ravi", "101", "Team Lead", 55000); 
+var details2 = new Office("Priya", "102", "Developer", 45000); 
+var details3 = new Office("Arun", "103", "Tester", 35000);   
+var details4 = new Office("Sneha", "104", "Intern", 25000);
+
+console.log(details2);
+details2.detail();
+
+
+// callback function :
+// passing a function into an another functions arguments is called callback function
+
+
+function name1(){
+console.log("sharvesh");
+
+}
+
+function greet(x) {
+    x()
+    console.log("good morning");
+    
+}
+greet(name1)
+
+
+//mulitiple function into another function
+
+
+function box1(x) {
+    console.log("box1");
+    x()
+}
+function box2(y) {
+    console.log("box2");
+    y()
+}
+function box3(z) {
+    console.log("box3");
+    z()
+}
+function box4() {
+    console.log("box4");
+   
+}
+
+box1(()=> {
+
+    box2(() =>{
+        box3((box4))
+    })
+}
+)
+
+//callback hell (async to sync)
+// callback hell - it is a traditional concept to handle async code
+
+function box1(x) {
+    setTimeout(()=>{
+        console.log("box1");
+        x()
+    },4000)
+}
+
+
+function box2(y) {
+    setTimeout(()=>{
+        console.log("box2");
+        y()
+    },500)
+}
+
+function box3(z) {
+    setTimeout(()=>{
+        console.log("box3");
+        z()
+    },2000)
+}
+
+function box4() {
+    setTimeout(()=>{
+        console.log("box4");
+    },1000)
+}
+
+box1(()=> {
+
+    box2(() =>{
+        box3((box4))
+    })
+}
+)
+
+//promise,async and await
+
+
+function watercane() {
+    setTimeout(()=>{
+        console.log("box1");
+        x()
+    },4000)
+}
+
+
+
+// task promise
+
+//jai
+//wake 5 am - 2
+//gym - 3
+//office - 1

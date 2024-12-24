@@ -1,0 +1,36 @@
+ Git - version controller
+ 
+ git hub - cloud storoge (store the code)
+ 
+ First time use methods:
+ 
+ git init - iniitialize the empty repo
+ 
+ git config --global user.email "email"
+ 
+ git config --global user.email "username"
+ 
+ 
+ 
+   git comments: push the code
+	 
+	 
+   git init
+   
+   git add .  
+   
+   git commit -m "First Push" 
+   
+   git remote add origin https://github.com/sharveshshrish/Dec-IPT  
+   
+   git branch -m main
+   
+   git push -u origin main
+   
+   
+   
+   git pull  :  pull the code
+   
+   git pull
+   
+   git stash
