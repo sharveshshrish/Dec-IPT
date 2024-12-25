@@ -1349,6 +1349,7 @@ box1(()=> {
 )
 
 //callback hell (async to sync)
+
 // callback hell - it is a traditional concept to handle async code
 
 function box1(x) {
@@ -1391,17 +1392,275 @@ box1(()=> {
 
 
 function watercane() {
+    return new Promise((resolve,reject) => {
+
+        setTimeout(()=>{
+            resolve("watercane filed")
+            
+    },3000)
+})
+}
+
+function room(){
+    return new Promise((resolve,reject) => {
     setTimeout(()=>{
-        console.log("box1");
-        x()
-    },4000)
+        resolve("room cleaned")
+    },2000)
+
+})
+}
+
+function trash(){
+    return new Promise((resolve,reject) => {
+    setTimeout(()=>{
+        resolve("trash kept outside")
+    },500)
+
+})
+}
+watercane().then(value => {console.log(value); return room()})
+           .then(value1 => {console.log(value1); return trash()})
+           .then(value3 => {console.log(value3);console.log("daily routine finished")})
+           
+           //Task
+
+           function wakeup (){
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                   resolve ("wake up at 5 AM") 
+                }, 4000);
+            })
+           }
+
+
+           function gym (){
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                   resolve ("GO TO GYM") 
+                }, 4000);
+            })
+           }
+
+           function office (){
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                   resolve ("GO TO THE OFFICE") 
+                }, 2000);
+            })
+           }
+
+           wakeup().then(routine => {console.log(routine); return gym()})
+                   .then(routine2 => {console.log(routine2); return office()})
+                    .then(routine3 => {console.log(routine3); console.log("daily routine completed")})
+
+    
+
+                  // promise - reject method 
+
+
+                    function watercane() {
+                        return new Promise((resolve,reject) => {
+                    
+                            setTimeout(()=>{
+
+                                const water = true
+
+                                if(water) {
+                                    resolve("watercane filed")
+                                    
+                                }else{
+
+                                    reject("water can empty")
+                                }
+                                
+                                
+                        },3000)
+                    })
+                    }
+                    
+                    function room(){
+                        return new Promise((resolve,reject) => {
+                        setTimeout(()=>{
+                            const room = true
+                              if(room) {
+
+                                resolve("room cleaned")
+                                    
+                                }else{
+
+                                    reject("room is dirty ")
+                                
+                              }
+
+                        },2000)
+                    
+                    })
+                    }
+                    
+                    function trash(){
+                        return new Promise((resolve,reject) => {
+                        setTimeout(()=>{
+                            const trash = false
+
+                            if(trash) {
+
+                            
+                            resolve("trash kept outside")
+
+                        } else {
+                           reject ("trash not kept outside")
+                        }
+
+                        },500);
+                    
+                    })
+                    }
+                    watercane().then(value => {console.log(value); return room()})
+                               .then(value1 => {console.log(value1); return trash()})
+                               .catch(err => {console.log(err)})
+
+  //async / await :
+  //async - it will return the promise
+  //await - it will wait fir the product
+
+
+  function watercane() {
+    return new Promise((resolve,reject) => {
+
+        setTimeout(()=>{
+
+            const water = true
+
+            if(water) {
+                resolve("watercane filed")
+                
+            }else{
+
+                reject("water can empty")
+            }
+            
+            
+    },3000)
+})
+}
+
+function room(){
+    return new Promise((resolve,reject) => {
+    setTimeout(()=>{
+        const room = true
+          if(room) {
+
+            resolve("room cleaned")
+                
+            }else{
+
+                reject("room is dirty ")
+            
+          }
+
+    },2000)
+
+})
+}
+
+function trash(){
+    return new Promise((resolve,reject) => {
+    setTimeout(()=>{
+        const trash = false
+
+        if(trash) {
+
+        
+        resolve("trash kept outside")
+
+    } else {
+       reject ("trash not kept outside")
+    }
+
+    },500);
+
+})
 }
 
 
+async function work() {
 
-// task promise
 
-//jai
-//wake 5 am - 2
-//gym - 3
-//office - 1
+    try{
+
+        const water = await watercane()
+        console.log(water);
+
+        const cleanroom = await room()
+        console.log(cleanroom);
+
+        const garbage = await trash()
+        console.log(garbage);
+        
+        
+        
+    } catch (err) {
+
+        console.log(err);
+        
+       
+        // if (err === "trash not kept outside") {
+        //     console.log(err);
+          
+            
+        // } else if {(err === )
+            
+        }
+    }work()
+
+
+//inheritance - accesing parent class methods in child classs
+
+
+class parent {
+
+    house() {
+        console.log("beach house");
+        
+    }
+    
+}
+
+class Child extends parent {
+
+    toy() {
+
+        console.log("car toy");
+        
+    }
+}
+
+var c = new Child();
+c.toy();
+c.house();
+
+
+
+
+task:
+
+// inhertiance task
+
+//3 class use pannum
+
+
+//parent  - car , bike
+
+// child 1 - money
+
+//child2 - jewels, house,documents
+
+
+//output:
+
+// child 1 - money and bike irukanum varanum output
+
+// child 2 - jewls , house documents,car output varanum
